@@ -1,12 +1,8 @@
-// here  will go endpoints for adopters
-const Adopter = require('./adopters-model')
 const express = require('express')
+const Adopter = require('./adopters-model')
 
-const router = express.Router()
+const router = express.Router() // like a 'mini' express app
 
-// ADOPTERS ENDPOINTS
-// ADOPTERS ENDPOINTS
-// ADOPTERS ENDPOINTS
 router.get('/api/adopters', (req, res) => {
   Adopter.find(req.query)
     .then(adopters => {
@@ -101,3 +97,5 @@ router.put('/api/adopters/:id', (req, res) => {
       });
     });
 });
+
+module.exports = router // DO NOT FORGET THIS! YOU WILL FORGET THIS, I PROMISE
