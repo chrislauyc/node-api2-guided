@@ -5,6 +5,8 @@ const router = express.Router() // like a 'mini' express app
 
 // the path of the request starts
 // with /api/adopters
+// and ends with whatever you
+// see in the endpoints
 router.get('/', (req, res) => {
   Adopter.find(req.query)
     .then(adopters => {
