@@ -129,7 +129,7 @@ server.get('/api/dogs', async (req, res) => {
     // if something crashes here
   } catch (err) {
     // we can "recover" here, take a look at the error (err)
-    res.status(500).json({ message: })
+    res.status(500).json({ message: `Something happened: ${err.message}` })
   }
 })
 
