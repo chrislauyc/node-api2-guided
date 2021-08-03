@@ -3,11 +3,17 @@ const Adopter = require('./adopters-model')
 
 const router = express.Router() // like a 'mini' express app
 
+
+router.get('/', async (req, res) => {
+
+})
+
 // the path of the request starts
 // with /api/adopters
 // and ends with whatever you
 // see in the endpoints
 router.get('/', (req, res) => {
+  console.log('the OLD adopters endpoint')
   Adopter.find(req.query)
     .then(adopters => {
       res.status(200).json(adopters);
