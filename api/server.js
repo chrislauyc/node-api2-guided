@@ -124,11 +124,12 @@ server.get('/api/dogs', (req, res) => { // using ES6 promises
     });
 });
 // using async/await
-server.get('/api/dogs', async () => {
+server.get('/api/dogs', async (req, res) => {
   try {
     // if something crashes here
   } catch (err) {
     // we can "recover" here, take a look at the error (err)
+    res.status(500).json({ message: })
   }
 })
 
