@@ -111,7 +111,7 @@ server.put('/api/adopters/:id', (req, res) => {
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
-server.get('/api/dogs', (req, res) => {
+server.get('/api/dogs', (req, res) => { // using ES6 promises
   Dog.find()
     .then(dogs => {
       res.status(200).json(dogs);
@@ -123,6 +123,8 @@ server.get('/api/dogs', (req, res) => {
       });
     });
 });
+// using async/await
+
 
 // OTHER ENDPOINTS
 // OTHER ENDPOINTS
