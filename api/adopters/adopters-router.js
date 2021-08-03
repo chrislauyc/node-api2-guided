@@ -7,7 +7,7 @@ const router = express.Router() // like a 'mini' express app
 router.get('/', async (req, res) => {
   console.log('the NEW adopters endpoint')
   try {
-    throw new Error('it was a disaster')
+    const adopters = await Adopter.find()
   } catch (error) {
     res.status(500).json({
       message: `tragically ${error.message}`
