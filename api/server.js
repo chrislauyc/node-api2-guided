@@ -127,6 +127,7 @@ server.get('/api/dogs', (req, res) => { // using ES6 promises
 server.get('/api/dogs', async (req, res) => {
   try {
     // if something crashes here
+    const dogs = await Dog.find()
   } catch (err) {
     // we can "recover" here, take a look at the error (err)
     res.status(500).json({ message: `Something happened: ${err.message}` })
