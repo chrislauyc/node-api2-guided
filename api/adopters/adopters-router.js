@@ -1,4 +1,5 @@
 // here  will go endpoints for adopters
+const Adopter = require('???????')
 
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
