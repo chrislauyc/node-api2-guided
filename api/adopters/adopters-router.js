@@ -5,7 +5,13 @@ const router = express.Router() // like a 'mini' express app
 
 
 router.get('/', async (req, res) => {
+  try {
 
+  } catch (error) {
+    res.status(500).json({
+      message: `tragically ${err.message}`
+    })
+  }
 })
 
 // the path of the request starts
