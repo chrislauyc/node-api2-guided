@@ -7,7 +7,7 @@ const adoptersRouter = require('./adopters/adopters-router'); // bring router
 const server = express();
 
 server.use(express.json());
-server.use(adoptersRouter); // plug router in server
+server.use('/api/adopters', adoptersRouter); // plug router in server
 
 const Dog = require('./dogs/dogs-model');
 
