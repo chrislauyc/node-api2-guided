@@ -124,7 +124,9 @@ server.get('/api/dogs', (req, res) => { // using ES6 promises
     });
 });
 // using async/await
-
+server.get('/api/dogs', async () => {
+  
+})
 
 // OTHER ENDPOINTS
 // OTHER ENDPOINTS
