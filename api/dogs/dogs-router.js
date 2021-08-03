@@ -7,7 +7,7 @@ const Dog = require('./dogs-model')
 // DOGS ENDPOINTS
 // DOGS ENDPOINTS
 // using async/await
-router.get('/api/dogs', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // if something crashes here
     console.log('getting dogs with async/await!')
@@ -23,7 +23,7 @@ router.get('/api/dogs', async (req, res) => {
 // the above one runs
 // because it comes first
 // SHOULD BE DELETED
-router.get('/api/dogs', (req, res) => { // using ES6 promises
+router.get('/', (req, res) => { // using ES6 promises
   Dog.find()
     .then(dogs => {
       res.status(200).json(dogs);
