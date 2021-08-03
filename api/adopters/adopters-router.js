@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 // see in the endpoints
 router.get('/', (req, res) => {
   console.log('the OLD adopters endpoint')
-  Adopter.find(req.query)
+  Adopter.find(req.query) // what is this???
     .then(adopters => {
       res.status(200).json(adopters);
     })
