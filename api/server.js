@@ -125,7 +125,11 @@ server.get('/api/dogs', (req, res) => { // using ES6 promises
 });
 // using async/await
 server.get('/api/dogs', async () => {
-  
+  try {
+    // if something crashes here
+  } catch (err) {
+    // we can "recover" here, take a look at the error (err)
+  }
 })
 
 // OTHER ENDPOINTS
