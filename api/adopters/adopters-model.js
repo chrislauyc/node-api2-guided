@@ -12,7 +12,7 @@ module.exports = {
 };
 
 function find(query) {
-  const { page = 1, limit = 2, sortby = 'id', sortdir = 'asc' } = query;
+  const { page = 1, limit = 2, sortby = 'id', sortdir = 'asc' } = query; //default query values
   const offset = limit * (page - 1);
 
   const rows = db('adopters')

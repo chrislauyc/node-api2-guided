@@ -4,7 +4,7 @@ const Adopter = require('./adopters-model');
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
-server.get('/', (req, res) => {
+router.get('/', (req, res) => {
     Adopter.find(req.query)
       .then(adopters => {
         res.status(200).json(adopters);
@@ -17,7 +17,7 @@ server.get('/', (req, res) => {
       });
   });
   
-  server.get('/:id', (req, res) => {
+  router.get('/:id', (req, res) => {
     Adopter.findById(req.params.id)
       .then(adopter => {
         if (adopter) {
@@ -34,7 +34,7 @@ server.get('/', (req, res) => {
       });
   });
   
-  server.get('/:id/dogs', (req, res) => {
+  router.get('/:id/dogs', (req, res) => {
     Adopter.findDogs(req.params.id)
       .then(dogs => {
         if (dogs.length > 0) {
@@ -51,7 +51,7 @@ server.get('/', (req, res) => {
       });
   });
   
-  server.post('/', (req, res) => {
+  router.post('/', (req, res) => {
     Adopter.add(req.body)
       .then(adopter => {
         res.status(201).json(adopter);
@@ -64,7 +64,7 @@ server.get('/', (req, res) => {
       });
   });
   
-  server.delete('/:id', (req, res) => {
+  router.delete('/:id', (req, res) => {
     Adopter.remove(req.params.id)
       .then(count => {
         if (count > 0) {
@@ -81,7 +81,7 @@ server.get('/', (req, res) => {
       });
   });
   
-  server.put('/:id', (req, res) => {
+  router.put('/:id', (req, res) => {
     const changes = req.body;
     Adopter.update(req.params.id, changes)
       .then(adopter => {
